@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.WebSockets;
-using System.Text;
-using ExemploCarol.Core.Entidades;
+﻿using ExemploCarol.Core.Entidades;
 using ExemploCarol.Infra.Repositorio;
+using System;
+using System.Collections.Generic;
 
 namespace ExemploCarol.Service
 {
@@ -15,7 +13,7 @@ namespace ExemploCarol.Service
         {
             _clienteRepositorio = new ClienteRepositorio();
         }
-        public void AdicionarCliente(Cliente cliente)
+        public void AdicionarCliente(Cliente cliente) //regra é que o cliente tem que ter nome, sobrenome e nao precisa endereco
         {
             if (cliente == null || cliente.Nome == null || cliente.Sobrenome == null)
             {
@@ -27,6 +25,11 @@ namespace ExemploCarol.Service
                 return;
             }
             _clienteRepositorio.AdicionarCliente(cliente);
+        }
+
+        public List<Cliente> ListarClientes()
+        {
+            return _clienteRepositorio.ListarClientes();
         }
     }
 }

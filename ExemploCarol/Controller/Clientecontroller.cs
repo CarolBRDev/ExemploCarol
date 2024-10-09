@@ -8,7 +8,7 @@ using ExemploCarol.Service;
 namespace ExemploCarol.Controller
 {
     internal class Clientecontroller
-    {
+    {//controler faz comunicação com a view/front
         private readonly ClienteService _clienteService;
         public void AdicionarCliente(string nome, string sobrenome)
         {
@@ -21,6 +21,11 @@ namespace ExemploCarol.Controller
 
             //return OK();
 
+        }
+
+        public List<Cliente> ListarClientes()
+        {
+           return _clienteService.ListarClientes();
         }
 
     }

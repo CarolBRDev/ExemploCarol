@@ -1,7 +1,5 @@
-﻿using System;
+﻿using ExemploCarol.Core.Entidades;
 using System.Collections.Generic;
-using System.Text;
-using ExemploCarol.Core.Entidades;
 
 namespace ExemploCarol.Infra.Repositorio
 {
@@ -14,6 +12,21 @@ namespace ExemploCarol.Infra.Repositorio
             //contexto<cliente>().Add() -> esta se comunicando com o banco de dados. como nao temos, vai criar uma lista pra simular o banco
             //context.SaveChanges()
             clientes.Add(cliente);
+        }
+
+        public List<Cliente> ListarClientes()
+        {
+            return clientes;
+        }
+
+        public void UpdateCliente()
+        {
+
+        }
+
+        public void DeleteCliente()
+        {
+
         }
     }
 }
